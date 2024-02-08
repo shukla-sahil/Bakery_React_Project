@@ -1,0 +1,354 @@
+
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: "Rubik", sans-serif;
+  --font-serif: "Cardo", serif;
+}
+
+ /* * {
+  box-sizing: border-box;
+}  */
+
+  /* .bodyss {
+  height: 100%;
+background-color:  #EAE3D2;
+}
+
+.bodyss {
+  display: grid;
+  place-items: center;
+}  */
+.product-heading  {
+  text-align: center;
+ margin: 0em 0 0.2em 0;
+ color:linear-gradient(to right top, #080c11, #0e1520, #111c2e, #16233d, #1d294c);
+ font-weight: normal;
+ font-size: 60px;
+ font-family:cursive;
+}
+
+.page-content {
+  margin-top: -200px;
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  max-width: 1500px;
+  font-family: var(--font-sans);
+
+}
+@media (min-width: 600px) {
+  
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+   position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 600px) {
+   
+  .card {
+    height: 400px;
+   
+  }
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+.card:nth-child(1):before {
+  background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/wdy050121lifeoftheparty-003-1621611282.jpg);
+}
+.card:nth-child(2):before {
+  background-image: url(https://content3.jdmagicbox.com/comp/guwahati/f2/9999px361.x361.180404030021.y2f2/catalogue/cakes-and-creation-at-road-guwahati-cake-shops-rirgv3rp2h.jpg?clr=471f3d);
+}
+.card:nth-child(3):before {
+  background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/birthday-cakes-raspberry-pink-velvet-1651157255.jpeg);
+}
+.card:nth-child(4):before {
+  background-image: url(https://i.pinimg.com/originals/9e/3e/d6/9e3ed6d3c4db8013f5084e418fa67fee.jpg);
+}
+
+.Coontent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.Coontent > * + * {
+  margin-top: 1rem;
+}
+
+.titles {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.btnn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: #c8a4df;
+  border: none;
+}
+.btnn:hover {
+  background-color: #fff;
+  color:#dda3ef;
+  font-weight:500;
+}
+.btnn:focus {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .Coontent {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+  .Coontent > *:not(.titles) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+
+  .card:hover,
+.card:focus-within {
+    align-items: center;
+  }
+  .card:hover:before,
+.card:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .card:hover:after,
+.card:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .card:hover .Coontent,
+.card:focus-within .Coontent {
+    transform: translateY(0);
+  }
+  .card:hover .Coontent > *:not(.titles),
+.card:focus-within .Coontent > *:not(.titles) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+
+  .card:focus-within:before, .card:focus-within:after,
+.card:focus-within .Coontent,
+.card:focus-within .Coontent > *:not(.titles) {
+    transition-duration: 0s;
+  }
+}
+
+.carousel-inner{
+  height: 350px;
+
+}
+
+.item, d-block w-100{
+ height: 100% !important;
+ width:  100% !important;
+
+}
+#carouselExampleDark{
+  height: 350px;
+  margin-bottom:15%;
+}
+
+
+
+.cardone {
+  width:300px;
+  height:400px;
+  margin:5px 10px;
+  display:inline-block;
+  border-radius:10px;
+  padding:50px 50px;
+  cursor:pointer;
+  background-size:cover;
+  transition:transform 0.5s;
+  justify-content: center;
+  margin-left: 7%;
+  
+  
+  }
+  .cardtwo{
+    width:300px;
+    height:400px;
+    margin:5px 10px;
+    display:inline-block;
+    border-radius:10px;
+    padding:50px 50px;
+    cursor:pointer;
+    background-size:cover;
+    transition:transform 0.5s;
+    justify-content: center;
+    }
+
+  .card1{
+    background-image: url("/public/images/m2.png");
+    color:#fff;
+  padding: 20%;
+  }
+  
+  .card2{
+  color:#fff;
+  background-image: url("/public/images/m1.png");
+  text-align: center;
+  padding: 20%;
+  } 
+
+  .cardone:hover{
+  transform:translateY(-10px);
+   background-image: url("/public/images/h2.png");
+  }
+  
+  .cardtwo:hover{
+    transform:translateY(-10px);
+    background-image: url("/public/images/h1.png");
+
+    }
+   .cardbo{
+    background-color: antiquewhite;
+    width: 100%;
+   } 
+   .yolo{
+    width: 100%;
+    text-align: center;
+    background-color: #9A8194;;
+    font-size:1em;
+    font-family: cursive;
+   }
+  
+
+
+/* CSS */
+.button1{
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button1:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #EBEBEB;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.button1:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+color: #34143e;
+}
+
+.button1:after {
+  background-color: #FFFFFF;
+  color: #351b3d;
+}
+
+.button1 span {
+  z-index: 1;
+  position: relative;
+}
+.card-text{
+  color:#fff;
+  letter-spacing:3px ;
+font-size: 110%;
+line-height: 250%;
+}
+.card-titles{
+  color:#fff;
+  font-family: Clarkson,Helvetica,sans-serif;
+}

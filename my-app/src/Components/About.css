@@ -1,0 +1,110 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans",sans-serif;
+    box-sizing: border-box;
+} */
+
+.body-ab{
+     margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d9cad8;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans",sans-serif;
+    box-sizing: border-box;
+}
+
+.about-section{
+    background: url(https://i0.wp.com/www.boskitchen.com/wp-content/uploads/2018/09/IMG_1622-1.jpg?resize=3134%2C3918) no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    height: 100%;
+    padding: 100px 0;
+    margin-bottom:-19px;
+}
+
+.innerab-container{
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 80px;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+.innerab-container .about-heading{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text-ab{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+.about-heading{
+  color: #8b678c;
+}
+
+.skills{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+@media screen and (max-width:1200px){
+    .innerab-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .innerab-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about-section{
+        padding: 0;
+    }
+    .innerab-container{
+        padding: 60px;
+    }
+}
+.span-ab{
+  cursor: pointer;
+  font-size: 16px;
+text-align: center;
+padding: 10px;
+  width: 200px;
+}
+.span-ab:hover{
+background-image: linear-gradient(to right top, #573367,  #2c0730c7, #542b5f) ;
+color: #fff;
+border-radius: 20px;
+transition: 0.15s;
+}
+.active-ab{
+  background-image: linear-gradient(to right top, #573367, #2c0730c7, #542b5f);
+  color: #fff;
+  text-align: center;
+    width: 200px;
+    border-radius: 18px;
+    padding: 10px;
+    font-size: 16px;
+}
+
