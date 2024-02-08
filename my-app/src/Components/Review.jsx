@@ -55,7 +55,7 @@ else{
     <br />
     <br />
     <div class="container-heading">
-      <h2 style={{textAlign:'center'}}>Write your valuable review</h2>
+      <h2 style={{textAlign:'center'}}>Write your valuable review ssssssssss</h2>
     {/* <form  ref={form} onSubmit={sendEmail}> */}
     <form onSubmit={sendReview}>
   
