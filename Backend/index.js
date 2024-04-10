@@ -1,12 +1,14 @@
 const express = require('express')
 const cors= require('cors')
-require("./db/config")
+require("./db/Config")
 const User=require('./db/user')
 const Product=require('./db/Products')
 const multer = require('multer')
 const imagemodule = require('./db/imagemodule')
 const Review = require('./db/Review')
 const app = express()
+
+
 // const Product=require('./db/Products')
 // const mailjet = require ('node-mailjet')
 // .connect('****************************1234', '****************************abcd')
@@ -21,7 +23,7 @@ const transporter = nodemailer.createTransport({
   host:  process.env.MAIL_HOST,
      auth: {
           user: process.env.MAIL_USERNAME,
-          pass: process.env.MAIL_PASSWORD,
+          pass: process.env.MAIL_PASSWORD,              
        },
 //   secure: true,
   });

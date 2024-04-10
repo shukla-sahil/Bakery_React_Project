@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from "../Components/nav"
 import Search from "../Components/Search"
 import {Link,useNavigate} from 'react-router-dom'
+import Cart from '../Components/Cart'
 
 function Header() {
   const auth = localStorage.getItem('user')
@@ -22,7 +23,11 @@ function Header() {
 
         <div class="icon">
             <i class="fas fa-search" id="search"></i>
+            <Link to='/cart'>
             <i class="fa fa-shopping-cart" ></i>
+            </Link>
+
+            <Link to='/profile'><i class="fa fa-user" ></i></Link>
             {
               auth ?  <Link onClick={logout}to='/'><span style={{color: "black",
                 fontWeight: "600",

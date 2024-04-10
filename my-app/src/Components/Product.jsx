@@ -77,7 +77,7 @@ export function Product() {
             <a href="/bakedproduct"><h4>Baked Goodies!</h4></a>
            </div>
         <div class="cardtwo card2">
-            <h4>cake & Pastries!</h4>
+            <a href='/cakes'><h4>cake & Pastries!</h4></a>
            </div>
 
     </div>

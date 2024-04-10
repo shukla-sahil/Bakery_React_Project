@@ -4,7 +4,7 @@ function nav()
   return   <nav class="navbar"  >
     <a href="/#home">Home</a>
     <a href="/product">Product</a>
-    <a href="/#blogs">Blogs</a>
+    <a href="/blogs">Blogs</a>
     {
       auth ?
       <a href="/review">Review</a>
