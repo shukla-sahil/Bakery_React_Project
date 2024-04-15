@@ -27,11 +27,8 @@ function Contactus() {
   
       <label > Name</label>
       <input className='input-contact' type="text" name='user_name' placeholder="Your name.." required />
-      
       <label > Email</label>
-      <input className='input-contact' type="text" name="user_email"  placeholder="Your Email.." required />
-  
-
+      <input  className='w-full border-1 border-black rounded-lg p-3 mb-4' type="email" name="user_email"  placeholder="Your Email.." required />
   
       <label >Area</label>
       <select  name="area">

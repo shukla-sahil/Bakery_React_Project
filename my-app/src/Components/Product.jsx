@@ -11,7 +11,7 @@ export function Product() {
     {/* <h1 className='product-heading' style={{backgroundColor:"#9A8194;" ,color:"#9A8194",fontFamily: "cursive"}}>Products</h1> */}
       <div id="carouselExampleDark" className="carousel carousel-dark slide mycarousel w-100" data-bs-ride="carousel">
         <div className="carousel-inner">
-          <div className="carousel-item active" data-bs-interval="5000">
+          <div className="carousel-item active" data-bs-interval="5050">
             <img src="/images/6.png" className="d-block w-100" alt="..."/>
           </div>
           <div className="carousel-item" data-bs-interval="2000">
@@ -74,10 +74,10 @@ export function Product() {
     <div class="col">
       <h1 className='product-heading' style={{backgroundColor:"#9A8194;" , color:"#9A8194", fontFamily: "cursive"}}>Featured</h1>
         <div class="cardone card1">
-            <a href="/bakedproduct"><h4>Baked Goodies!</h4></a>
+            <a href="/bakedproduct"><h2>Baked Goodies!</h2></a>
            </div>
         <div class="cardtwo card2">
-            <a href='/cakes'><h4>cake & Pastries!</h4></a>
+            <a style={{textDecoration: 'none'}} href='/cakes'><h2>cake & Pastries!</h2></a>
            </div>
 
     </div>

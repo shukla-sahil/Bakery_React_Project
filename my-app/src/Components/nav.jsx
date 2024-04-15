@@ -10,6 +10,7 @@ function nav()
       <a href="/review">Review</a>
       : null
     }
+        {/* <a href="/admin-product">Admin Product List</a> */}
     <a href="/contact">Contact</a>
     <a href="/about">About Us</a>
 </nav>

@@ -2,10 +2,28 @@ import React, { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import  './Login.css'
 import jwt_decode from "jwt-decode"
+import toast  from 'react-hot-toast';
+
 export const Login = () => {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const navigate = useNavigate();
+    const showToast = (message) => {
+      toast.success(message, {
+        style: {
+          fontSize: '18px', // adjust the font size here
+        },
+        duration: 5050, // adjust the duration (in milliseconds) here
+      });
+    };
+    const showToastError = (message) => {
+      toast.error(message, {
+        style: {
+          fontSize: '18px', // adjust the font size here
+        },
+        duration: 50000, // adjust the duration (in milliseconds) here
+      });
+    };
     useEffect(()=>{
         const auth = localStorage.getItem('user')
         if(auth)
@@ -27,13 +45,24 @@ export const Login = () => {
     // localStorage.setItem("user",JSON.stringify(result))
     // navigate('/')
     if(result.name){
-        localStorage.setItem("user",JSON.stringify(result))
+        localStorage.setItem("user",JSON.stringify(result));
+        getCartData();
         navigate('/')
+        showToast(`Login succesfull`);
     }
     else{
-        alert("please enter correct details!!!")
+        // alert("please enter correct details!!!")
+        showToastError(`Login Unsuccesfull`);
     }
 
+}
+const getCartData = async () => {
+  const auth = localStorage.getItem('user')
+  if(auth){
+      let result = await fetch(`http://localhost:5050/cart?userId=${JSON.parse(auth)._id}`)
+      result = await result.json();
+      localStorage.setItem("cartCount",JSON.stringify(result.length));
+  }
 }
 const[user,setuser]=useState({})
 function handleCallbackResponse(response)
@@ -92,8 +121,8 @@ google.accounts.id.prompt()
                   </div>
                 }
                 <span>or use your account</span> 
-                <input className='login-input' type="email" placeholder="Email"  onChange={(e)=>setEmail(e.target.value)} value={email}/>
-                <input className='login-input' type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} value={password} />
+                <input className='login-input' type="email" placeholder="Email" required onChange={(e)=>setEmail(e.target.value)} value={email}/>
+                <input className='login-input' type="password" placeholder="Password" required onChange={(e)=>setPassword(e.target.value)} value={password} />
                 {/* <br> */}
               <span>  <a className='login-header' href="#">Forgot your password?</a>  |  <a className='login-header' href="/register">New Sign Up?</a> </span> 
                <br></br>

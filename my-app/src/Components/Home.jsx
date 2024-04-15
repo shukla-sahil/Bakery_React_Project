@@ -4,12 +4,14 @@ import emailjs from '@emailjs/browser';
 import e from 'cors';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useNavigate} from 'react-router-dom';
 // import {usestate} from "react"
 // import db from "./firebase"
 // import firebase from 'firebase/compat/app'
 function Home() {
     const [email, setEmail] = useState("");
     const [reviews, setReviews] = useState([]);
+    const navigate = useNavigate(); 
     useEffect(() => {
         getReviews();
     }, [])
@@ -46,6 +48,9 @@ function Home() {
             alert("Successfully subscribed for newsletter")
         }
     }
+    const HandleClick =()=>{
+         navigate('/BakedProduct')
+    }
     return (<>
         <section class="home" id="home">
             <div class="homeContent">
@@ -54,7 +59,7 @@ function Home() {
                 <br />
                 <p>— John Kraus, Chef</p>
                 <div class="home-btn">
-                    <a href="#"><button>see more</button></a>
+                    <a href="/BakedProduct"><button>see more</button></a>
                 </div>
             </div>
         </section>
@@ -73,7 +78,7 @@ function Home() {
                             <p>You can’t buy happiness but u can buy cupcakes.
                             </p>
                             <div class="orderNow">
-                                <button>Order Now </button>
+                                <button onClick={HandleClick}>Order Now </button>
                             </div>
                         </div>
                     </div>
@@ -87,7 +92,7 @@ function Home() {
 
                             </p>
                             <div class="orderNow">
-                                <button>Order Now </button>
+                                <button onClick={HandleClick}>Order Now </button>
                             </div>
                         </div>
                     </div>
@@ -100,7 +105,7 @@ function Home() {
                             <p>Make it, bake it, buy it.
                             </p>
                             <div class="orderNow">
-                                <button>Order Now </button>
+                                <button onClick={HandleClick}>Order Now </button>
                             </div>
                         </div>
                     </div>
@@ -218,41 +223,17 @@ function Home() {
 
                 </div>
             </div>
-
-            {/* <h3>Product List</h3> */}
-
-            {/* <div style={{ display: "flex", marginLeft: "3%" }}> */}
-<div className='review-container'>
-            {
-
-                reviews.map((data, key) => {
-                    return (
-                        <div key={key}>
-                            {/* <div style={{ width: "18rem" }}> */}
-                            {/* <img  src="images/cake1.png" alt="Card image cap"/> */}
-                            <div className=" swiper review-row">
-                                <div className="swiper-wrapper">
-                                    <div className="swiper-slide box">
-                                        <div className='client-review'>
-                                            <div>
-                                                {/* <h5>Name:{data.name}</h5>
-                                                    <h5>Email:{data.email}</h5> */}
-                                                <h5>Message:{data.message}</h5>
-                                                {/* <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                                                {/* <a href="#" class="btn btn-primary">Buy Now</a> */}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* </div> */}
-                        </div>
-                    )
-                })
-            }
-
-            {/* </div> */}
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+    {reviews.map((data, key) => (
+        <div key={key} className="flex flex-col ml-16 mb-8 items-center bg-[#DEB6AB] rounded-3xl p-12 shadow-lg">
+            <p className="text-4xl text-center text-gray-800 mb-4">"{data.message}"</p>
+            <div className="text-center">
+                <h3 className="text-3xl text-center font-semibold"> - {data.name}</h3>
             </div>
+        </div>
+    ))}
+</div>
+
         </section>
         <Footer />
     </>

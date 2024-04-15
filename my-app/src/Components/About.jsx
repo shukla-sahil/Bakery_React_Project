@@ -4,6 +4,12 @@ import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom'
 export function About() {
   const navigate = useNavigate();
+  const HandleClck=()=>{
+    navigate('/contact');
+  }
+  const HandleClick=()=>{
+    navigate('/');
+  }
   return (
 <div className="body-ab">
     <div className="about-section">
@@ -25,8 +31,8 @@ export function About() {
         </p>
         <div className="skills">
             <span className="active-ab">Branches</span>
-            <span className='span-ab' onClick={navigate('/')}>Home</span>
-            <span className='span-ab' onClick={navigate('/contact')}>Contactus</span>
+            <span className='span-ab' onClick={HandleClick}>Home</span>
+            <span className='span-ab' onClick={HandleClck}>Contactus</span>
         </div>
     </div>
 </div>

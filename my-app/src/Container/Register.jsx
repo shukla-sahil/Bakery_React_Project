@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import  './Register.css'
 import { useState } from 'react'
 import { useNavigate} from 'react-router-dom';
+import toast  from 'react-hot-toast';
 
 export const Register = () => {
     const [name,setName]=useState("");
@@ -33,10 +34,11 @@ export const Register = () => {
     result = await result.json();
     if(result.statusCode == 422){
 
-      alert(result.message);
+      toast.error(`${result.message}Register Unsuccesfull`);
     }
     else{
-      alert(result.message);
+      toast.success(`${result.message}Register succesfull`);
+      // navigate('/login')
     }
     
     // localStorage.setItem("user",JSON.stringify(result))
@@ -61,7 +63,7 @@ export const Register = () => {
           </div>
           <div class="input-boxs">
             <span class="details">Phone Number</span>
-            <input type="number" placeholder="Enter your number" required value={phoneNumber} onChange={(e)=>setPhoneNumber(e.target.value)}/>
+            <input type="number" placeholder="Enter your number" required value={phoneNumber}  onChange={(e)=>setPhoneNumber(e.target.value)}/>
           </div>
           <div class="input-boxs">
             <span class="details">Password</span>

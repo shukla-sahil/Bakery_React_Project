@@ -55,7 +55,7 @@ else{
     <br />
     <br />
     <div class="container-heading">
-      <h2 style={{textAlign:'center'}}>Write your valuable review ssssssssss</h2>
+      <h2 style={{textAlign:'center'}}>Write your valuable reviews</h2>
     {/* <form  ref={form} onSubmit={sendEmail}> */}
     <form onSubmit={sendReview}>
   
@@ -63,7 +63,7 @@ else{
       <input className='input-contact' type="text" name='user_name' placeholder="Your name.." required value={name} onChange={(e)=>setName(e.target.value)}/>
       
       <label > Email</label>
-      <input className='input-contact' type="text" name="user_email"  placeholder="Your Email.." required value={email} onChange={(e)=>setEmail(e.target.value)}/>
+      <input className='w-full border-1 border-black rounded-lg p-3 mb-4' type="email" name="user_email"  placeholder="Your Email.." required value={email} onChange={(e)=>setEmail(e.target.value)}/>
   
 
   

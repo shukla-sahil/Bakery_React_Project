@@ -2,6 +2,7 @@
     background-image: url(https://www.bakemag.com/ext/resources/images/2022/4/FunnyFaceBakery_NewStore.jpg?t=1650035282&width=1080 );
     margin-top: -9px;
     height: 710px;
+    font-size: 15px;
   }
   /* Style input-contacts with type="text", select elements and textareas */
   .input-contact[type=text], select, textarea {

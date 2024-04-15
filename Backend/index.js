@@ -17,6 +17,7 @@ dotenv.config();
 var nodemailer = require('nodemailer');
 const { raw } = require('express')
 const subscribe = require('./db/subscribe')
+const ProductCart = require('./db/ProductCart')
 // const fs= require("fs");
 const transporter = nodemailer.createTransport({
   port: process.env.MAIL_PORT,               // true for 465, false for other ports
@@ -174,6 +175,74 @@ console.log(err)
       .catch((err) => console.log(err));
        }
     })
+})
+
+app.post('/add-to-cart',async(req,res)=>{
+  console.log("Jai mata di",req.body);
+  if(req.body.userId && req.body.productId){
+    if(req.body.addToCart == 1){
+      let cartData = new ProductCart({productId:req.body.productId,userId:req.body.userId});
+      let result = await cartData.save();
+    }
+    else{
+      let result = await ProductCart.deleteOne({ productId: req.body.productId,userId:req.body.userId });
+    }
+  res.send({result: "no user found"})
+}
+})
+
+app.get('/cart',async(req,res)=>{
+  const products = await Product.find();
+  const productCartData =  await ProductCart.find({userId:req.query.userId});
+  let cartArray = [];
+  productCartData.map((cartData)=>{
+    cartArray.push(cartData.productId);
+  });
+  console.log(cartArray);
+  let result = [];
+  if(products && productCartData){
+    products.map((productData)=>{
+      if(productData){
+        if(cartArray.includes(productData._id.toString())){
+          result.push(productData);
+        }
+      }
+    })
+  }
+  if(result.length>0){
+      res.send(result)
+  }else
+  {
+      res.send({result :"no items in cart."})
+  }
+})
+
+
+app.post('/add-Product', async (req, res) => {
+  let product = new Product(req.body);
+  let result = await product.save()
+  res.send(result)
+})
+
+app.delete("/products/:id", async (req, res) => {
+  let result = await Product.deleteOne({ _id: req.params.id });
+  res.send(result);
+})
+
+app.get("/product/:id", async (req, res) => {
+  let result = await Product.findOne({ _id: req.params.id })
+  if (result) {   
+      res.send(result)
+  } else {
+      res.send({ "result": "no record found" })
+  }
+})
+app.put("/product/:id", async (req, res) => {
+  let result =  await Product.updateOne(
+      { _id: req.params.id },
+      { $set: req.body }
+  )
+  res.send(result)
 })
 
 app.listen(5050)
