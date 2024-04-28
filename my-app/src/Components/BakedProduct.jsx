@@ -70,7 +70,7 @@ export const BakedProduct = () => {
                                     <div className="product-names">{data.name}</div>
                                     <div className="product-ratingg">
                                         <span role="img" aria-label="star">
-                                            ⭐
+                                            ⭐⭐⭐
                                         </span>
                                     </div>
                                     <div className="product-pricee">

@@ -45,28 +45,28 @@ export function Product() {
             <div className="Coontent">
               <h2 className="titles">Strawberries & Brownies</h2>
               <p className="copy">Check out all of these gorgeous!</p>
-              <button className="btnn">Book Now</button>
+              <a href="/BakedProduct"><button className="btnn">Book Now</button></a>
             </div>
           </div>
           <div className="card">
             <div className="Coontent">
               <h2 className="titles">Lavender Flourish</h2>
               <p className="copy">Plan your Lavender person a Lavender Birthday with Lavender cake.</p>
-              <button className="btnn">Book Now</button>
+              <a href="/BakedProduct"> <button className="btnn">Book Now</button> </a>
             </div>
           </div>
           <div className="card">
             <div className="Coontent">
               <h2 className="titles">Sakura's Touch</h2>
               <p className="copy">It's the dessert you've always dreamed of</p>
-              <button className="btnn">Book Now</button>
+              <a href="/BakedProduct"> <button className="btnn">Book Now</button></a>
             </div>
           </div>
           <div className="card">
             <div className="Coontent">
               <h2 className="titles">Explore The macarons</h2>
               <p className="copy">Seriously, straight up, just blast off into outer space of macarons</p>
-              <button className="btnn">Book Now</button>
+              <a href="/BakedProduct"> <button className="btnn">Book Now</button></a>
             </div>
           </div>
         </main>
@@ -74,7 +74,7 @@ export function Product() {
     <div class="col">
       <h1 className='product-heading' style={{backgroundColor:"#9A8194;" , color:"#9A8194", fontFamily: "cursive"}}>Featured</h1>
         <div class="cardone card1">
-            <a href="/bakedproduct"><h2>Baked Goodies!</h2></a>
+            <a href="/Bakedproduct"><h2>Baked Goodies!</h2></a>
            </div>
         <div class="cardtwo card2">
             <a style={{textDecoration: 'none'}} href='/cakes'><h2>cake & Pastries!</h2></a>
@@ -96,7 +96,7 @@ export function Product() {
             
             Online ordering, payment and doorstep delivery make for a seamless experience.</p>
           {/* <!-- <a href="#" class="btn btn-primary button">Go somewhere</a> --> */}
-      <a href="https://forms.gle/LKL8ga4nRcTKTt768"><button class="button1">Explore</button></a> 
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSebHt20dldB2-Up9Ns025ZF845IIeqyJgsSOiBI_SkW6WP0Uw/viewform"><button class="button1">Explore</button></a> 
         </div> 
         </div>
         {/* </div> */}
