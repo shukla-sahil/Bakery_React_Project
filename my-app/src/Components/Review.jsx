@@ -78,7 +78,7 @@ else{
       </select> */}
   
       <label for="subject">Subject</label>
-      <textarea name="message" placeholder="Write your review.."  style={{height: "200px"}} value={message} onChange={(e)=>setMessage(e.target.value)} ></textarea>
+      <textarea name="message" placeholder="Write your review.." required style={{height: "200px"}} value={message} onChange={(e)=>setMessage(e.target.value)} ></textarea>
         <button className='btn-con' type='submit' value='send'>submit</button>
   
   

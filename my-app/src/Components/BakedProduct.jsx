@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Cart from './Cart';
 import toast  from 'react-hot-toast';
-
+import './BakedProduct.css'
 
 export const BakedProduct = () => {
     const [products, setProducts] = useState([]);
