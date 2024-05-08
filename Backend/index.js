@@ -143,9 +143,6 @@ app.get("/show-reviews", async (req,res)=>{
       res.send({result :"no product found"})
   }
 })
-
-
-
 // Storage
 const Storage = multer.diskStorage({
   destination :'uploads',
