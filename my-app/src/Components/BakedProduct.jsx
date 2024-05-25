@@ -13,7 +13,7 @@ export const BakedProduct = () => {
     }, [])
 
     const getProducts = async () => {
-        let result = await fetch("http://localhost:5050/products")
+        let result = await fetch("https://sweetcakess.onrender.com/products")
         result = await result.json()
         setProducts(result)
     }
@@ -21,7 +21,7 @@ export const BakedProduct = () => {
     const getCartData = async () => {
         const auth = localStorage.getItem('user')
         if(auth){
-            let result = await fetch(`http://localhost:5050/cart?userId=${JSON.parse(auth)._id}`)
+            let result = await fetch(`https://sweetcakess.onrender.com/cart?userId=${JSON.parse(auth)._id}`)
             result = await result.json();
             localStorage.setItem("cartCount",JSON.stringify(result.length));
             setCartItems(result)
@@ -33,7 +33,7 @@ export const BakedProduct = () => {
         console.log(auth);
         // setCartItems([...cartItems, product]);
         if(auth){
-            let result = await fetch("http://localhost:5050/add-to-cart", {
+            let result = await fetch("https://sweetcakess.onrender.com/add-to-cart", {
                 method:'post',
                 body:JSON.stringify({productId:product._id,userId:JSON.parse(auth)._id,addToCart:flag}),
                 headers:{

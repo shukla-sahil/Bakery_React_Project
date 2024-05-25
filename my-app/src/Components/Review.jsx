@@ -25,7 +25,7 @@ function Review() {
   const sendReview = async()=>{
     console.warn(name,email,message)
     // frontend data into nodejs api and database
-    let result = await fetch("http://localhost:5050/review",{
+    let result = await fetch("https://sweetcakess.onrender.com/review",{
         method:'post',
         body:JSON.stringify({name,email,message}),
         headers:{

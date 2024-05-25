@@ -9,7 +9,7 @@ function ProductCartList() {
 
     useEffect(() => {
         const auth = localStorage.getItem('user')
-        const apiURL = (`http://localhost:5050/cart?userId=${JSON.parse(auth)._id}`);
+        const apiURL = (`https://sweetcakess.onrender.com/cart?userId=${JSON.parse(auth)._id}`);
         fetch(apiURL)
             .then(response => {
                 if (!response.ok) {
@@ -30,7 +30,7 @@ function ProductCartList() {
     const getCartData = async () => {
         const auth = localStorage.getItem('user')
         if(auth){
-            let result = await fetch(`http://localhost:5050/cart?userId=${JSON.parse(auth)._id}`)
+            let result = await fetch(`https://sweetcakess.onrender.com/cart?userId=${JSON.parse(auth)._id}`)
             result = await result.json();
             localStorage.setItem("cartCount",JSON.stringify(result.length));
             setProducts(result)
@@ -42,7 +42,7 @@ function ProductCartList() {
         console.log(auth);
         // setCartItems([...cartItems, product]);
         if(auth){
-            let result = await fetch("http://localhost:5050/add-to-cart", {
+            let result = await fetch("https://sweetcakess.onrender.com/add-to-cart", {
                 method:'post',
                 body:JSON.stringify({productId:product._id,userId:JSON.parse(auth)._id,addToCart:0}),
                 headers:{

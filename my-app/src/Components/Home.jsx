@@ -34,7 +34,7 @@ function Home() {
     };
 
     const subscibeNewsLetter = async () => {
-        let result = await fetch("http://localhost:5050/subscribe", {
+        let result = await fetch("https://sweetcakess.onrender.com/subscribe", {
             method: 'post',
             body: JSON.stringify({ email }),
             headers: {

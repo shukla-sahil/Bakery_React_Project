@@ -24,7 +24,7 @@ export const Register = () => {
     const collectData=async()=>{
         console.warn(name,email,password)
         // frontend data into nodejs api and database
-        let result = await fetch("http://localhost:5050/register",{
+        let result = await fetch("https://sweetcakess.onrender.com/register",{
             method:'post',
             body:JSON.stringify({name,email,password,phoneNumber}),
             headers:{

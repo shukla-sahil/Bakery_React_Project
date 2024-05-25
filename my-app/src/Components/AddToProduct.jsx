@@ -18,7 +18,7 @@ const AddToProduct = () => {
           console.warn(name,price,category,company)
           const userId = JSON.parse(localStorage.getItem('user'))._id;
           console.warn(userId);
-          let result = await fetch("http://localhost:5050/add-Product",{
+          let result = await fetch("https://sweetcakess.onrender.com/add-Product",{
             method:'post',
             body:JSON.stringify({name,price,category,userId}),
             headers:{

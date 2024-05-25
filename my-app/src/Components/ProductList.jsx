@@ -9,14 +9,14 @@
 //     }, [])
 
 //     const getProducts = async () => {
-//         let result = await fetch("http://localhost:5050/products")
+//         let result = await fetch("https://sweetcakess.onrender.com/products")
 //         result = await result.json()
 //         setProducts(result)
 //     }
 
 //     const deleteProduct = async(id)=>{
 //         console.warn(id)
-//         let result = await fetch(`http://localhost:5050/products/${id}`,{
+//         let result = await fetch(`https://sweetcakess.onrender.com/products/${id}`,{
 //             method :"Delete"
 //         })
 //         result = await result.json();

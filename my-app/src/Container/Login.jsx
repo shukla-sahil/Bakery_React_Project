@@ -32,7 +32,7 @@ export const Login = () => {
         } 
       },[])    
     const handleLogin= async()=>{
-        let result = await fetch("http://localhost:5050/login", {
+        let result = await fetch("https://sweetcakess.onrender.com/login", {
           method:'post',
           body:JSON.stringify({email,password}),
           headers:{
@@ -59,7 +59,7 @@ export const Login = () => {
 const getCartData = async () => {
   const auth = localStorage.getItem('user')
   if(auth){
-      let result = await fetch(`http://localhost:5050/cart?userId=${JSON.parse(auth)._id}`)
+      let result = await fetch(`https://sweetcakess.onrender.com/cart?userId=${JSON.parse(auth)._id}`)
       result = await result.json();
       localStorage.setItem("cartCount",JSON.stringify(result.length));
   }
