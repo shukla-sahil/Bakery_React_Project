@@ -18,7 +18,7 @@ function Home() {
     }, [])
 
     const getReviews = async () => {
-        let result = await fetch("http://localhost:5050/show-reviews")
+        let result = await fetch("https://sweetcakess.onrender.com/show-reviews")
         result = await result.json()
         setReviews(result)
     }
