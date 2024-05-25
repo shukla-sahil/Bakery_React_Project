@@ -65,32 +65,32 @@ const getCartData = async () => {
   }
 }
 const[user,setuser]=useState({})
-// function handleCallbackResponse(response)
-// {
-// console.log("Encoded JWT ID token"+response.credential)
-// var userObject=jwt_decode(response.credential)
-// console.log(userObject)
-// setuser(userObject)
-// document.getElementById("signInDiv").hidden=true
-// }
-// function handleSignOut(event)
-// {
-//   setuser({})
-//   document.getElementById("signInDiv").hidden=false
+function handleCallbackResponse(response)
+{
+console.log("Encoded JWT ID token"+response.credential)
+var userObject=jwt_decode(response.credential)
+console.log(userObject)
+setuser(userObject)
+document.getElementById("signInDiv").hidden=true
+}
+function handleSignOut(event)
+{
+  setuser({})
+  document.getElementById("signInDiv").hidden=false
 
-// }
-// useEffect(()=>
-// {/*global google*/
-// google.accounts.id.initialize({
-//   client_id:"1035531980750-77qmhlntflidkepqherf2o2k0g7biphl.apps.googleusercontent.com",
-//   callback: handleCallbackResponse
-// })
-// google.accounts.id.renderButton(
-//   document.getElementById("signInDiv"),
-//   {theme:"outline",size:"large"}
-// )
-// google.accounts.id.prompt()
-// },[])
+}
+useEffect(()=>
+{/*global google*/
+google.accounts.id.initialize({
+  client_id:"1035531980750-77qmhlntflidkepqherf2o2k0g7biphl.apps.googleusercontent.com",
+  callback: handleCallbackResponse
+})
+google.accounts.id.renderButton(
+  document.getElementById("signInDiv"),
+  {theme:"outline",size:"large"}
+)
+google.accounts.id.prompt()
+},[])
 //if we have no user : signin button
 //if we have a user :show log out button
   return (
