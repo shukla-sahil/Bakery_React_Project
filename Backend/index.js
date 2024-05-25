@@ -16,7 +16,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 var nodemailer = require('nodemailer');
 const { raw } = require('express')
-const subscribe = require('./db/subscribe')
+const subscribe = require('./db/Subscribe')
 const ProductCart = require('./db/ProductCart')
 // const fs= require("fs");
 const transporter = nodemailer.createTransport({
