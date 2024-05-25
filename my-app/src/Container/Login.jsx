@@ -64,33 +64,33 @@ const getCartData = async () => {
       localStorage.setItem("cartCount",JSON.stringify(result.length));
   }
 }
-const[user,setuser]=useState({})
-function handleCallbackResponse(response)
-{
-console.log("Encoded JWT ID token"+response.credential)
-var userObject=jwt_decode(response.credential)
-console.log(userObject)
-setuser(userObject)
-document.getElementById("signInDiv").hidden=true
-}
-function handleSignOut(event)
-{
-  setuser({})
-  document.getElementById("signInDiv").hidden=false
+// const[user,setuser]=useState({})
+// function handleCallbackResponse(response)
+// {
+// console.log("Encoded JWT ID token"+response.credential)
+// var userObject=jwt_decode(response.credential)
+// console.log(userObject)
+// setuser(userObject)
+// document.getElementById("signInDiv").hidden=true
+// }
+// function handleSignOut(event)
+// {
+//   setuser({})
+//   document.getElementById("signInDiv").hidden=false
 
-}
-useEffect(()=>
-{/*global google*/
-google.accounts.id.initialize({
-  client_id:"1035531980750-77qmhlntflidkepqherf2o2k0g7biphl.apps.googleusercontent.com",
-  callback: handleCallbackResponse
-})
-google.accounts.id.renderButton(
-  document.getElementById("signInDiv"),
-  {theme:"outline",size:"large"}
-)
-google.accounts.id.prompt()
-},[])
+// }
+// useEffect(()=>
+// {/*global google*/
+// google.accounts.id.initialize({
+//   client_id:"1035531980750-77qmhlntflidkepqherf2o2k0g7biphl.apps.googleusercontent.com",
+//   callback: handleCallbackResponse
+// })
+// google.accounts.id.renderButton(
+//   document.getElementById("signInDiv"),
+//   {theme:"outline",size:"large"}
+// )
+// google.accounts.id.prompt()
+// },[])
 //if we have no user : signin button
 //if we have a user :show log out button
   return (
@@ -107,7 +107,7 @@ google.accounts.id.prompt()
                      <a className='login-header' href="#" class="fa fa-twitter"></a>
                      <a className='login-header' href="#" class="fa fa-google"></a> 
                 </div> */}
-                <div id='signInDiv'></div>
+                {/* <div id='signInDiv'></div>
                 {
                   Object.keys(user).length!=0 &&
                 
@@ -119,7 +119,7 @@ google.accounts.id.prompt()
                     <img src={user.picture}></img>
                     <h3>{user.name}</h3>
                   </div>
-                }
+                } */}
                 <span>or use your account</span> 
                 <input className='login-input' type="email" placeholder="Email" required onChange={(e)=>setEmail(e.target.value)} value={email}/>
                 <input className='login-input' type="password" placeholder="Password" required onChange={(e)=>setPassword(e.target.value)} value={password} />
