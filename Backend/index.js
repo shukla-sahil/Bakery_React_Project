@@ -1,7 +1,7 @@
 const express = require('express')
 const cors= require('cors')
 require("./db/Config")
-const User=require('./db/user')
+const User=require('./db/User')
 const Product=require('./db/Products')
 const multer = require('multer')
 const imagemodule = require('./db/imagemodule')
