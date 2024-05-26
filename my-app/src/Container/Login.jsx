@@ -26,6 +26,7 @@ export const Login = () => {
     };
     useEffect(()=>{
         const auth = localStorage.getItem('user')
+        console.log(auth);
         if(auth)
         {
           navigate('/')
@@ -47,7 +48,10 @@ export const Login = () => {
     if(result.name){
         localStorage.setItem("user",JSON.stringify(result));
         getCartData();
-        navigate('/')
+        setTimeout(()=>{
+          navigate('/')
+        },8000)
+        
         showToast(`Login succesfull`);
     }
     else{
