@@ -30,7 +30,13 @@ const transporter = nodemailer.createTransport({
   });
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://sweetcakess-weld.vercel.app",
+    method: ["GET", "POST", "DELETE", "PUT"],
+    credentials: true,
+  })
+);
 
 app.post('/register',async(req,res)=>{
     let checkUser = await User.findOne({email:req.body.email});
