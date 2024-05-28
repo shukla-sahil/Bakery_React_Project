@@ -52,7 +52,6 @@ export const Login = () => {
         localStorage.setItem("user",JSON.stringify(resultData));
         getCartData();
         // setTimeout(()=>{
-          navigate('/')
         // },8000)
         showToast(`Login succesfull`);
     }
@@ -68,6 +67,8 @@ const getCartData = async () => {
       let result = await fetch(`https://sweetcakess.onrender.com/cart?userId=${JSON.parse(auth)._id}`)
       result = await result.json();
       localStorage.setItem("cartCount",JSON.stringify(result.length));
+      navigate('/')
+
   }
 }
 // const[user,setuser]=useState({})
