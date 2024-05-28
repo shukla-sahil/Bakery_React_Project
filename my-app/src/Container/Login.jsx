@@ -44,17 +44,16 @@ export const Login = () => {
           }
         
     });
-   let  resultData = result.json();
+   let  resultData = await result.json();
     console.warn(result);
     // localStorage.setItem("user",JSON.stringify(result))
     // navigate('/')
-    if(resultData.name){
+    if(resultData?.name){
         localStorage.setItem("user",JSON.stringify(resultData));
-        setTimeout(()=>{
-          navigate('/')
-        },8000)
+        // setTimeout(()=>{
+        //   navigate('/')
+        // },8000)
         getCartData();
-
         showToast(`Login succesfull`);
     }
     else{
