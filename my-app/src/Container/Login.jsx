@@ -51,9 +51,9 @@ export const Login = () => {
     if(resultData?.name){
         localStorage.setItem("user",JSON.stringify(resultData));
         getCartData();
-        setTimeout(()=>{
+        // setTimeout(()=>{
           navigate('/')
-        },8000)
+        // },8000)
         showToast(`Login succesfull`);
     }
     else{
