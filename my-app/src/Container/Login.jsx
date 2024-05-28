@@ -31,8 +31,9 @@ export const Login = () => {
         {
           navigate('/')
         } 
-      },[])    
-    const handleLogin= async()=>{
+      },[])   
+      
+    const handleLogin = async()=>{
         let result = await fetch("https://sweetcakess.onrender.com/login", {
           method:'post',
           body:JSON.stringify({email,password}),
@@ -41,17 +42,17 @@ export const Login = () => {
           }
         
     });
-    result = await result.json();
+   let  resultData = await result.json();
     console.warn(result);
     // localStorage.setItem("user",JSON.stringify(result))
     // navigate('/')
-    if(result.name){
-        localStorage.setItem("user",JSON.stringify(result));
-        getCartData();
+    if(resultData.name){
+        localStorage.setItem("user",JSON.stringify(resultData));
         setTimeout(()=>{
           navigate('/')
         },8000)
-        
+        getCartData();
+
         showToast(`Login succesfull`);
     }
     else{
