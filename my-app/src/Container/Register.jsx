@@ -70,28 +70,8 @@ export const Register = () => {
             <input type="password" placeholder="Enter your password" requiredvalue={password} onChange={(e)=>setPassword(e.target.value)}/>
           </div>
         </div>
-        {/* <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1"/>
-          <input type="radio" name="gender" id="dot-2"/>
-          <input type="radio" name="gender" id="dot-3"/>
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-            </label>
-          </div>
-        </div> */}
         <div class="button">
-          <button type="button" class="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={collectData} value="Register">Register</button>
+          <button type="button" class="register-button" onClick={collectData} value="Register">Register</button>
         </div>
       </div>
     </div>

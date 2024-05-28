@@ -101,6 +101,20 @@ form .input-boxs span.details{
  form input[type="radio"]{
    display: none;
  }
+
+ .register-button{
+  border-radius: 20px;
+	border: 1px solid #FFFFFF;
+	background-color:  #562349;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+  margin-top: 12px;
+ }
  form .button{
    height: 45px;
    margin: 35px 0
