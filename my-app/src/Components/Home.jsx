@@ -164,7 +164,10 @@ function Home() {
             <div>
                 <h3>subscribe for latest update</h3>
                 <input type="email" name="" placeholder="enter your email" id="" class="box" onChange={(e) => setEmail(e.target.value)} />
-                <input type="submit" value="subscribe" class="box2" onClick={subscibeNewsLetter} />
+                <button  value="subscribe" className="box2 w-40 text-white bg-purple-300 hover:bg-purple-400  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-blue-800" onClick={subscibeNewsLetter}>
+  Subscribe
+</button>
+
             </div>
             {/* {message &&  <alert>{message}</alert>} */}
         </section>
