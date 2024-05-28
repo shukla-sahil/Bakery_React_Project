@@ -37,8 +37,8 @@ function App() {
 <Route exact path ='/review' element ={<Review/>}/>
 <Route exact path ='/blogs' element ={<Blog/>}/>
 <Route exact path ='/profile' element ={<Profile/>}/>
-{/* <Route exact path ='/admin-product' element ={<ProductList/>}/> */}
-{/* <Route exact path ='/update/:id' element ={<UpdateProduct/>}/> */}
+<Route exact path ='/admin-product' element ={<ProductList/>}/>
+<Route exact path ='/update/:id' element ={<UpdateProduct/>}/>
 <Route exact path ='/login' element ={<Login/>}/>
 <Route exact path ='/register' element ={<Register/>}/>
 </Routes>
