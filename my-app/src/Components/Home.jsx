@@ -161,11 +161,11 @@ function Home() {
             </div>
         </section><br></br>
         <section class="newsletter">
-            <form>
+            <div>
                 <h3>subscribe for latest update</h3>
                 <input type="email" name="" placeholder="enter your email" id="" class="box" onChange={(e) => setEmail(e.target.value)} />
                 <input type="submit" value="subscribe" class="box2" onClick={subscibeNewsLetter} />
-            </form>
+            </div>
             {/* {message &&  <alert>{message}</alert>} */}
         </section>
 
