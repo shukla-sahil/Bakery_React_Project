@@ -51,7 +51,7 @@ export const Register = () => {
          <div class="reg-conatiner">
     <div class="title">Registration</div>
     <div class="content ">
-      <form  onSubmit={collectData}>
+      <div>
         <div class="user-details">
           <div class="input-boxs">
             <span class="details">Full Name</span>
@@ -91,9 +91,9 @@ export const Register = () => {
           </div>
         </div> */}
         <div class="button">
-          <input type="submit" value="Register"/>
+          <button type="button" class="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={collectData} value="Register">Register</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
