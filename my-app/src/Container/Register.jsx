@@ -38,7 +38,7 @@ export const Register = () => {
     }
     else{
       toast.success(`${result.message}Register succesfull`);
-      // navigate('/login')
+      navigate('/login')
     }
     
     // localStorage.setItem("user",JSON.stringify(result))
