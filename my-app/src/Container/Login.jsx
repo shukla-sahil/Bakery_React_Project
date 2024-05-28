@@ -26,6 +26,8 @@ export const Login = () => {
     };
     useEffect(()=>{
         const auth = localStorage.getItem('user')
+        localStorage.setItem("ert","qwerty");
+
         console.log(auth);
         if(auth)
         {
