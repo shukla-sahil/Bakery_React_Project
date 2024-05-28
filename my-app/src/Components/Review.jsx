@@ -57,7 +57,7 @@ else{
     <div class="container-heading">
       <h2 style={{textAlign:'center'}}>Write your valuable reviews</h2>
     {/* <form  ref={form} onSubmit={sendEmail}> */}
-    <form onSubmit={sendReview}>
+    <div>
   
       <label > Name</label>
       <input className='input-contact' type="text" name='user_name' placeholder="Your name.." required value={name} onChange={(e)=>setName(e.target.value)}/>
@@ -79,10 +79,8 @@ else{
   
       <label for="subject">Subject</label>
       <textarea name="message" placeholder="Write your review.." required style={{height: "200px"}} value={message} onChange={(e)=>setMessage(e.target.value)} ></textarea>
-        <button className='btn-con' type='submit' value='send'>submit</button>
-  
-  
-    </form>
+        <button className='btn-con' type='submit' value='send' onClick={sendReview}>submit</button>
+    </div>
     </div>
     </div>
   )
