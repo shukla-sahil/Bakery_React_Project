@@ -44,7 +44,7 @@ export const Login = () => {
           }
         
     });
-   let  resultData = await result.json();
+   let  resultData = result.json();
     console.warn(result);
     // localStorage.setItem("user",JSON.stringify(result))
     // navigate('/')
