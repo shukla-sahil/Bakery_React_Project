@@ -104,7 +104,7 @@ const getCartData = async () => {
 <div className='Border-box'>
     <div class="containers body" id="container">
         <div class="form-container log-in-container">
-            <form className='login-form' >
+            <div className='login-form' >
                 <h1 className='login-heading'>Login</h1>
                 <br />
                 
@@ -133,7 +133,7 @@ const getCartData = async () => {
               <span>  <a className='login-header' href="#">Forgot your password?</a>  |  <a className='login-header' href="/register">New Sign Up?</a> </span> 
                <br></br>
                 <button className='login-button' onClick={handleLogin}>Log In</button>
-            </form>
+            </div>
         </div>
         <div class="overlay-container">
                         <div class="overlay">
